@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background: #f4f4f4;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    header nav {
+      position: relative;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    header nav ul li a:hover {
+      color: #007bff;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 3px 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background: #eef2f3;
+      text-align: center;
+    }
+
+    .hero .content {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      flex: 1;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .projects, .education {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1 1 300px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      height: 120px; /* Further reduced the size of the image */
+      object-fit: cover;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    footer ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #f4f4f4;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      header nav ul.active {
+        display: flex;
+      }
+
+      header nav ul li {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Portfolio</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="content">
+      <h1>Hello, I'm  Abhishek</h1> 
+      <p>I am a developer passionate about creating intuitive and dynamic user experiences.</p>
+      <a href="https://drive.google.com/file/d/1a2Y4ilrYs3v-3Nu-Qyc9gSbbTMkogsLp/view?usp=drive_link" download="Resume_Abhishek.pdf" target="_blank"><button class="btn">Download CV</button></a>
+      <a href="https://www.linkedin.com/in/abhishek-j-265ba420b" target="_blank"><button class="btn">Visit LinkedIn</button></a>
+    </div>
+    <img src="images/webdev.png" alt="Web Developer">
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="images/project.png" alt="Project 1">
+        <h3>Bookasia</h3>
+        <p>An online book purchasing website developed using HTML, CSS, Java, and MySQL.</p>
+      </div>
+      <div class="card">
+        <img src="images/project.png" alt="Project 2">
+        <h3>Weather App</h3>
+        <p>A weather web application integrated with the OpenWeather API using JavaScript.</p>
+      </div>
+      <div class="card">
+        <img src="images/project.png" alt="Project 3">
+        <h3>Dairy Management System</h3>
+        <p>A .NET-based application for tracking daily milk collection and maintaining records.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education">
+      <div class="card">
+        <h3>SSC</h3>
+        <p>Completed 10th from Anant English School, Satara with 82.20%.</p>
+      </div>
+      <div class="card">
+        <h3>HSC</h3>
+        <p>Completed 12th from Yashwantrao Chavan Institute of Science, Satara with 52.20%.</p>
+      </div>
+      <div class="card">
+        <h3>B.Sc CS</h3>
+        <p>Graduated from LBS College, Satara with 75.56%.</p>
+      </div>
+      <div class="card">
+        <h3>M.Sc CS</h3>
+        <p>Pursuing Master's from Shivaji University, Kolhapur with 70.14%.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Abhishek Jagtap. All rights reserved.</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/abhishek-j-265ba420b">LinkedIn</a></li>
+      <li><a href="https://github.com/abhi5046">GitHub</a></li>
+      <li><a href="https://www.hackerrank.com/profile/abhishekjagtap52">HackerRank</a></li>
+      <li><a href="mailto:abhishekjagtap5046@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
